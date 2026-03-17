@@ -3,3 +3,4 @@ venv
 .venv
 .localstack
 */__pycache__
+*.pyc
