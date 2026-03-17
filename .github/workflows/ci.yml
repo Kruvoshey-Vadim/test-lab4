@@ -44,10 +44,12 @@ jobs:
 
       - name: Run unit tests
         run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest tests/test_case.py --maxfail=1 --disable-warnings -v
 
       - name: Run integration tests
         run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest tests/test_integration.py --maxfail=1 --disable-warnings -v
           coverage run -m pytest tests/test_integration.py
           coverage report -m
